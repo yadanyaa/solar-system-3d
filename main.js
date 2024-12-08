@@ -92,6 +92,14 @@ export function init() {
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
+
+    // Добавляем освещение
+    const ambientLight = new THREE.AmbientLight(0x404040, 2); // мягкий свет
+    scene.add(ambientLight);
+
+    const sunLight = new THREE.PointLight(0xffffff, 2, 1000);
+    sunLight.position.set(0, 0, 0);
+    scene.add(sunLight);
     
     // Создаем звездное небо
     createStarField();
@@ -101,23 +109,11 @@ export function init() {
         createPlanet(planetName);
     });
     
-    // Добавляем освещение
-    const ambientLight = new THREE.AmbientLight(0x333333);
-    scene.add(ambientLight);
-    
-    const sunLight = new THREE.PointLight(0xffffff, 2, 1000);
-    scene.add(sunLight);
+    // Добавляем обработчик изменения размера окна
+    window.addEventListener('resize', onWindowResize, false);
     
     // Запускаем анимацию
     animate();
-    
-    // Обработчик изменения размера окна
-    window.addEventListener('resize', onWindowResize, false);
-    
-    // Обработчик изменения скорости вращения
-    document.getElementById('rotation-speed').addEventListener('input', (e) => {
-        rotationSpeed = parseFloat(e.target.value);
-    });
 }
 
 function createStarField() {
@@ -145,43 +141,50 @@ function createStarField() {
 function createPlanet(planetName) {
     const geometry = new THREE.SphereGeometry(planetSizes[planetName], 32, 32);
     
-    textureLoader.load(planetTextures[planetName], (texture) => {
-        const material = new THREE.MeshPhongMaterial({
-            map: texture,
-            shininess: 5
-        });
-        
-        const planet = new THREE.Mesh(geometry, material);
-        
-        // Располагаем планету на орбите
-        planet.position.x = planetDistances[planetName];
-        
-        planets[planetName] = planet;
-        scene.add(planet);
-        
-        // Создаем орбиту
-        if (planetName !== 'sun') {
-            const orbitGeometry = new THREE.BufferGeometry();
-            const orbitMaterial = new THREE.LineBasicMaterial({
-                color: 0x666666,
-                transparent: true,
-                opacity: 0.3
+    textureLoader.load(
+        planetTextures[planetName],
+        (texture) => {
+            const material = new THREE.MeshPhongMaterial({
+                map: texture,
+                shininess: 5
             });
             
-            const orbitPoints = [];
-            for (let i = 0; i <= ORBIT_SEGMENTS; i++) {
-                const angle = (i / ORBIT_SEGMENTS) * Math.PI * 2;
-                const x = Math.cos(angle) * planetDistances[planetName];
-                const z = Math.sin(angle) * planetDistances[planetName];
-                orbitPoints.push(new THREE.Vector3(x, 0, z));
-            }
+            const planet = new THREE.Mesh(geometry, material);
             
-            orbitGeometry.setFromPoints(orbitPoints);
-            const orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
-            orbitLines[planetName] = orbitLine;
-            scene.add(orbitLine);
+            // Располагаем планету на орбите
+            planet.position.x = planetDistances[planetName];
+            
+            planets[planetName] = planet;
+            scene.add(planet);
+            
+            // Создаем орбиту
+            if (planetName !== 'sun') {
+                const orbitGeometry = new THREE.BufferGeometry();
+                const orbitMaterial = new THREE.LineBasicMaterial({
+                    color: 0x666666,
+                    transparent: true,
+                    opacity: 0.3
+                });
+                
+                const orbitPoints = [];
+                for (let i = 0; i <= ORBIT_SEGMENTS; i++) {
+                    const angle = (i / ORBIT_SEGMENTS) * Math.PI * 2;
+                    const x = Math.cos(angle) * planetDistances[planetName];
+                    const z = Math.sin(angle) * planetDistances[planetName];
+                    orbitPoints.push(new THREE.Vector3(x, 0, z));
+                }
+                
+                orbitGeometry.setFromPoints(orbitPoints);
+                const orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
+                orbitLines[planetName] = orbitLine;
+                scene.add(orbitLine);
+            }
+        },
+        undefined,
+        (error) => {
+            console.error(`Error loading texture for ${planetName}:`, error);
         }
-    });
+    );
 }
 
 function animate() {
