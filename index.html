@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>WHAT YOU SEE</h1>
+        <div class="subtitle">SOLAR EXPLORER</div>
+    </div>
+
+    <div class="planets-list">
+        <div class="planet-item" data-planet="mercury">MERCURY</div>
+        <div class="planet-item" data-planet="venus">VENUS</div>
+        <div class="planet-item" data-planet="earth">EARTH</div>
+        <div class="planet-item" data-planet="mars">MARS</div>
+        <div class="planet-item" data-planet="jupiter">JUPITER</div>
+        <div class="planet-item" data-planet="saturn">SATURN</div>
+        <div class="planet-item" data-planet="uranus">URANUS</div>
+        <div class="planet-item" data-planet="neptune">NEPTUNE</div>
+        <div class="planet-item" data-planet="pluto">PLUTO</div>
+    </div>
+
+    <div class="planet-info">
+        <button class="close-btn">×</button>
+        <h2></h2>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="general">General</button>
+            <button class="tab-btn" data-tab="parameters">Parameters</button>
+            <button class="tab-btn" data-tab="facts">Facts</button>
+        </div>
+        
+        <div class="tab-content">
+            <div id="general" class="tab-pane active"></div>
+            <div id="parameters" class="tab-pane"></div>
+            <div id="facts" class="tab-pane"></div>
+        </div>
+    </div>
+
+    <div id="scene-container"></div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+            "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.157.0/examples/jsm/controls/OrbitControls.js",
+            "three/examples/jsm/libs/tween.module.min": "https://unpkg.com/three@0.157.0/examples/jsm/libs/tween.module.min.js"
+        }
+    }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
