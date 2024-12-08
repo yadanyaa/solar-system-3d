@@ -1,162 +1,162 @@
 export const planetData = {
     sun: {
-        name: "Sun",
-        type: "Star",
-        description: "The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core.",
-        facts: [
-            "The Sun accounts for 99.86% of the Solar System's mass",
-            "The Sun's core can reach temperatures of 15 million °C",
-            "Light from the Sun takes about 8 minutes to reach Earth"
-        ],
+        name: 'SUN',
+        type: 'Star',
+        description: 'The Sun is the star at the center of the Solar System.',
         parameters: {
-            mass: "1.989 × 10^30 kg",
-            diameter: "1,392,684 km",
-            temperature: "5,500°C (surface)",
-            rotation: "27 Earth days"
-        }
+            mass: '1.989 × 10^30 kg',
+            diameter: '1,392,684 km',
+            temperature: '5,778 K (surface)',
+            rotation: '27 Earth days'
+        },
+        facts: [
+            'The Sun contains 99.86% of the Solar System\'s mass',
+            'The Sun\'s surface temperature is about 10,000 Fahrenheit',
+            'The Sun is actually white, not yellow'
+        ]
     },
     mercury: {
-        name: "Mercury",
-        type: "Terrestrial planet",
-        description: "Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the planets.",
-        facts: [
-            "Mercury has no moons",
-            "It has the most eccentric orbit of all planets",
-            "Despite being closest to the Sun, Venus is actually hotter"
-        ],
+        name: 'MERCURY',
+        type: 'Terrestrial Planet',
+        description: 'Mercury is the smallest and innermost planet in the Solar System.',
         parameters: {
-            mass: "3.285 × 10^23 kg",
-            diameter: "4,879 km",
-            temperature: "-180°C to 430°C",
-            rotation: "59 Earth days"
-        }
+            mass: '3.285 × 10^23 kg',
+            diameter: '4,879 km',
+            temperature: '-180°C to 430°C',
+            rotation: '59 Earth days'
+        },
+        facts: [
+            'Mercury has no moons',
+            'Mercury is the fastest planet',
+            'Mercury has the most eccentric orbit'
+        ]
     },
     venus: {
-        name: "Venus",
-        type: "Terrestrial planet",
-        description: "Venus is the second planet from the Sun and is Earth's closest planetary neighbor. It's one of the four inner, terrestrial planets.",
-        facts: [
-            "Venus rotates backwards compared to most planets",
-            "It's the hottest planet in our solar system",
-            "A day on Venus is longer than its year"
-        ],
+        name: 'VENUS',
+        type: 'Terrestrial Planet',
+        description: 'Venus is the second planet from the Sun and the hottest planet in our solar system.',
         parameters: {
-            mass: "4.867 × 10^24 kg",
-            diameter: "12,104 km",
-            temperature: "462°C (average)",
-            rotation: "243 Earth days"
-        }
+            mass: '4.867 × 10^24 kg',
+            diameter: '12,104 km',
+            temperature: '462°C',
+            rotation: '243 Earth days'
+        },
+        facts: [
+            'Venus rotates backwards',
+            'Venus has the longest day of any planet',
+            'Venus is the hottest planet'
+        ]
     },
     earth: {
-        name: "Earth",
-        type: "Terrestrial planet",
-        description: "Earth is the third planet from the Sun and the only astronomical object known to harbor life. It is the largest of the Solar System's four terrestrial planets.",
-        facts: [
-            "Earth is the only planet not named after a god",
-            "The Earth's core is as hot as the Sun's surface",
-            "70% of the Earth's surface is covered in water"
-        ],
+        name: 'EARTH',
+        type: 'Terrestrial Planet',
+        description: 'Earth is the third planet from the Sun and the only astronomical object known to harbor life.',
         parameters: {
-            mass: "5.972 × 10^24 kg",
-            diameter: "12,742 km",
-            temperature: "15°C (average)",
-            rotation: "24 hours"
-        }
+            mass: '5.972 × 10^24 kg',
+            diameter: '12,742 km',
+            temperature: '-88°C to 58°C',
+            rotation: '24 hours'
+        },
+        facts: [
+            'Earth is the only planet not named after a god',
+            'Earth is the only planet known to have life',
+            'Earth has one natural satellite - the Moon'
+        ]
     },
     mars: {
-        name: "Mars",
-        type: "Terrestrial planet",
-        description: "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System. It is often called the 'Red Planet'.",
-        facts: [
-            "Mars has the largest volcano in the Solar System",
-            "Mars has two moons: Phobos and Deimos",
-            "Mars experiences frequent dust storms"
-        ],
+        name: 'MARS',
+        type: 'Terrestrial Planet',
+        description: 'Mars is the fourth planet from the Sun and is often called the Red Planet.',
         parameters: {
-            mass: "6.39 × 10^23 kg",
-            diameter: "6,779 km",
-            temperature: "-63°C (average)",
-            rotation: "24 hours 37 minutes"
-        }
+            mass: '6.39 × 10^23 kg',
+            diameter: '6,779 km',
+            temperature: '-140°C to 20°C',
+            rotation: '24 hours 37 minutes'
+        },
+        facts: [
+            'Mars has the largest volcano in the solar system',
+            'Mars has two moons',
+            'Mars has the largest dust storms in the solar system'
+        ]
     },
     jupiter: {
-        name: "Jupiter",
-        type: "Gas giant",
-        description: "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets combined.",
-        facts: [
-            "Jupiter has the shortest day of all planets",
-            "The Great Red Spot is a giant storm that has lasted hundreds of years",
-            "Jupiter has at least 79 moons"
-        ],
+        name: 'JUPITER',
+        type: 'Gas Giant',
+        description: 'Jupiter is the fifth planet from the Sun and the largest planet in our Solar System.',
         parameters: {
-            mass: "1.898 × 10^27 kg",
-            diameter: "139,820 km",
-            temperature: "-110°C (cloud top)",
-            rotation: "10 hours"
-        }
+            mass: '1.898 × 10^27 kg',
+            diameter: '139,820 km',
+            temperature: '-110°C',
+            rotation: '10 hours'
+        },
+        facts: [
+            'Jupiter has the shortest day of any planet',
+            'Jupiter has the Great Red Spot',
+            'Jupiter has at least 79 moons'
+        ]
     },
     saturn: {
-        name: "Saturn",
-        type: "Gas giant",
-        description: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine and a half times that of Earth.",
-        facts: [
-            "Saturn's rings are made mostly of ice and rock",
-            "Saturn has 82 confirmed moons",
-            "Saturn is the least dense planet in the Solar System"
-        ],
+        name: 'SATURN',
+        type: 'Gas Giant',
+        description: 'Saturn is the sixth planet from the Sun and is famous for its rings.',
         parameters: {
-            mass: "5.683 × 10^26 kg",
-            diameter: "116,460 km",
-            temperature: "-140°C (average)",
-            rotation: "10.7 hours"
-        }
+            mass: '5.683 × 10^26 kg',
+            diameter: '116,460 km',
+            temperature: '-140°C',
+            rotation: '10.7 hours'
+        },
+        facts: [
+            'Saturn has the most extensive rings in the solar system',
+            'Saturn has 82 confirmed moons',
+            'Saturn is the least dense planet'
+        ]
     },
     uranus: {
-        name: "Uranus",
-        type: "Ice giant",
-        description: "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
-        facts: [
-            "Uranus rotates on its side",
-            "It was the first planet discovered with a telescope",
-            "Uranus has 27 known moons"
-        ],
+        name: 'URANUS',
+        type: 'Ice Giant',
+        description: 'Uranus is the seventh planet from the Sun and rotates on its side.',
         parameters: {
-            mass: "8.681 × 10^25 kg",
-            diameter: "50,724 km",
-            temperature: "-195°C (average)",
-            rotation: "17 hours"
-        }
+            mass: '8.681 × 10^25 kg',
+            diameter: '50,724 km',
+            temperature: '-195°C',
+            rotation: '17 hours 14 minutes'
+        },
+        facts: [
+            'Uranus rotates on its side',
+            'Uranus has 27 known moons',
+            'Uranus is the coldest planet in the solar system'
+        ]
     },
     neptune: {
-        name: "Neptune",
-        type: "Ice giant",
-        description: "Neptune is the eighth and farthest known Solar planet from the Sun. It is the fourth-largest planet by diameter and the third-most-massive planet.",
-        facts: [
-            "Neptune has the strongest winds in the Solar System",
-            "It has 14 known moons",
-            "Neptune takes 165 Earth years to orbit the Sun"
-        ],
+        name: 'NEPTUNE',
+        type: 'Ice Giant',
+        description: 'Neptune is the eighth planet from the Sun and the windiest planet in our Solar System.',
         parameters: {
-            mass: "1.024 × 10^26 kg",
-            diameter: "49,244 km",
-            temperature: "-214°C (average)",
-            rotation: "16 hours"
-        }
+            mass: '1.024 × 10^26 kg',
+            diameter: '49,244 km',
+            temperature: '-200°C',
+            rotation: '16 hours'
+        },
+        facts: [
+            'Neptune has the strongest winds in the solar system',
+            'Neptune has 14 known moons',
+            'Neptune has only been visited by one spacecraft'
+        ]
     },
     pluto: {
-        name: "Pluto",
-        type: "Dwarf planet",
-        description: "Pluto is a dwarf planet in the Kuiper belt. It was the first and largest Kuiper belt object to be discovered.",
-        facts: [
-            "Pluto was reclassified as a dwarf planet in 2006",
-            "It has 5 known moons",
-            "Pluto is smaller than Earth's moon"
-        ],
+        name: 'PLUTO',
+        type: 'Dwarf Planet',
+        description: 'Pluto is a dwarf planet in the Kuiper belt.',
         parameters: {
-            mass: "1.303 × 10^22 kg",
-            diameter: "2,377 km",
-            temperature: "-230°C (average)",
-            rotation: "6.4 Earth days"
-        }
+            mass: '1.303 × 10^22 kg',
+            diameter: '2,377 km',
+            temperature: '-230°C',
+            rotation: '6.4 Earth days'
+        },
+        facts: [
+            'Pluto was once considered the ninth planet',
+            'Pluto has 5 known moons',
+            'Pluto is smaller than Earth\'s moon'
+        ]
     }
 };

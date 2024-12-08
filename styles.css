@@ -1,256 +1,17 @@
-:root {
-    --background-color: #000000;
-    --text-color: #ffffff;
-    --accent-color: #ff4444;
-    --secondary-color: #666666;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Arial', sans-serif;
     overflow: hidden;
-}
-
-.header {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 10;
-}
-
-.header h1 {
-    font-size: 4em;
-    margin: 0;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    letter-spacing: 5px;
-}
-
-.subtitle {
-    font-size: 1.2em;
-    opacity: 0.7;
-    letter-spacing: 2px;
-}
-
-.planets-list {
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.planet-item {
-    padding: 10px 20px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0.6;
-    display: flex;
-    align-items: center;
-}
-
-.planet-item::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-right: 15px;
-    background-color: var(--text-color);
-}
-
-.planet-item:hover,
-.planet-item.active {
-    opacity: 1;
-    transform: translateX(10px);
-}
-
-.planet-info {
-    position: fixed;
-    right: -400px;
-    top: 0;
-    width: 400px;
-    height: 100vh;
-    background: rgba(15, 15, 20, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #000;
     color: #fff;
-    transition: right 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.planet-info.active {
-    right: 0;
-}
-
-.planet-info h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #4a9eff;
-    text-align: center;
-}
-
-.planet-info h3 {
-    font-size: 1.2em;
-    color: #7ab5ff;
-    margin-bottom: 10px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-}
-
-.close-btn:hover {
-    transform: scale(1.1);
-}
-
-.tabs {
-    margin-top: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.tab-btn {
-    background: none;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.2s ease;
-}
-
-.tab-btn.active {
-    opacity: 1;
-    border-bottom: 2px solid #4a9eff;
-}
-
-.tab-content {
-    margin-top: 20px;
-}
-
-.tab-pane {
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-.parameter {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-}
-
-.parameter label {
-    color: #7ab5ff;
-}
-
-#facts ul {
-    list-style: none;
-    padding: 0;
-}
-
-#facts li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    line-height: 1.4;
-}
-
-#facts li:before {
-    content: "•";
-    color: #4a9eff;
-    margin-right: 10px;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.planet-info.active {
-    animation: slideIn 0.3s ease forwards;
-}
-
-.tab-pane.active {
-    animation: fadeIn 0.3s ease forwards;
-}
-
-.controls-panel {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.control-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--text-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.control-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.minimap {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 150px;
-    height: 150px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    z-index: 10;
-}
-
-#scene-container {
+#canvas-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -259,59 +20,80 @@ body {
     z-index: 1;
 }
 
-.search-container {
-    position: absolute;
-    top: 30px;
-    left: 50px;
-    z-index: 10;
+#controls-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#planetSearch {
+#planet-list {
+    margin-top: 20px;
+}
+
+#planet-list h3 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+button {
     background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--text-color);
-    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 8px 15px;
+    margin: 5px;
     border-radius: 5px;
-    width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
 }
 
-#planetSearch::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.timeline {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    text-align: center;
-    z-index: 10;
-}
-
-#timeSlider {
+#reset-camera {
     width: 100%;
+    background: rgba(0, 150, 255, 0.3);
     margin-bottom: 10px;
 }
 
-.time-display {
-    font-size: 0.8em;
-    opacity: 0.7;
+#reset-camera:hover {
+    background: rgba(0, 150, 255, 0.4);
 }
 
-::-webkit-scrollbar {
-    width: 8px;
+#planet-info {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 300px;
+    display: none;
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #controls-panel {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        max-width: 90%;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4);
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
 }
