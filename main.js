@@ -14,16 +14,16 @@ const STAR_COUNT = 10000;
 // Текстуры планет
 const textureLoader = new THREE.TextureLoader();
 const planetTextures = {
-    sun: 'textures/sun.jpg',
-    mercury: 'textures/mercury.jpg',
-    venus: 'textures/venus.jpg',
-    earth: 'textures/earth.jpg',
-    mars: 'textures/mars.jpg',
-    jupiter: 'textures/jupiter.jpg',
-    saturn: 'textures/saturn.jpg',
-    uranus: 'textures/uranus.jpg',
-    neptune: 'textures/neptune.jpg',
-    pluto: 'textures/pluto.jpg'
+    sun: 'textures/2k_sun.jpg',
+    mercury: 'textures/2k_mercury.jpg',
+    venus: 'textures/2k_venus.jpg',
+    earth: 'textures/2k_earth.jpg',
+    mars: 'textures/2k_mars.jpg',
+    jupiter: 'textures/2k_jupiter.jpg',
+    saturn: 'textures/2k_saturn.jpg',
+    uranus: 'textures/2k_uranus.jpg',
+    neptune: 'textures/2k_neptune.jpg',
+    pluto: 'textures/2k_pluto.jpg'
 };
 
 // Размеры планет (не в масштабе для лучшей визуализации)
