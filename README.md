@@ -1,31 +1,32 @@
-# Interactive 3D Solar System
+# 3D Solar System Visualization
 
-An interactive 3D visualization of our solar system built with Three.js.
+An interactive 3D visualization of our Solar System built with Three.js. Experience the beauty of space exploration right in your browser!
+
+## Live Demo
+
+Visit [https://yadanyaa.github.io/solar-system-3d/](https://yadanyaa.github.io/solar-system-3d/) to see the project in action.
 
 ## Features
 
-- Realistic 3D models of planets with accurate textures
-- Interactive planet selection and camera controls
-- Detailed information about each planet
-- Beautiful visual effects including star field and sun corona
-- Responsive design that works on both desktop and mobile
+- Realistic 3D planet models with accurate textures
+- Interactive camera controls for exploring the solar system
+- Planet information panel with detailed data
+- Realistic planet orbits and rotations
+- Beautiful star field background
+- Responsive design for all devices
 
 ## Technologies Used
 
 - Three.js for 3D rendering
-- JavaScript (ES6+)
-- HTML5 & CSS3
-- WebGL
+- ES6 Modules for code organization
+- HTML5/CSS3 for layout and styling
+- Modern JavaScript for interactivity
 
-## Live Demo
-
-Visit [https://your-username.github.io/solar-system-3d](https://your-username.github.io/solar-system-3d) to see the live demo.
-
-## Setup Locally
+## Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/solar-system-3d.git
+git clone https://github.com/yadanyaa/solar-system-3d.git
 ```
 
 2. Navigate to the project directory:
@@ -33,19 +34,34 @@ git clone https://github.com/your-username/solar-system-3d.git
 cd solar-system-3d
 ```
 
-3. Open index.html in your browser or use a local server:
+3. Serve the files using a local server (e.g., using Python's built-in server):
 ```bash
 python -m http.server 8000
 ```
 
-Then visit `http://localhost:8000` in your browser.
+4. Open your browser and visit:
+```
+http://localhost:8000
+```
+
+## Controls
+
+- Left Mouse Button: Rotate camera
+- Right Mouse Button: Pan camera
+- Mouse Wheel: Zoom in/out
+- Planet Buttons: Focus on specific planets
+- Reset Camera: Return to default view
+
+## Project Structure
+
+- `index.html` - Main HTML file
+- `main.js` - Core 3D rendering and animation logic
+- `planetData.js` - Planet information and parameters
+- `styles.css` - Styling and layout
+- `textures/` - Planet texture images
 
 ## Credits
 
-- Planet textures from NASA
+- Planet textures sourced from NASA
 - Three.js for 3D graphics library
-- Original implementation by [Your Name]
-
-## License
-
-MIT License - feel free to use this project for learning or your own projects.
+- ES Module Shims for module support
