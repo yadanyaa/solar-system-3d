@@ -12,8 +12,26 @@ body {
     color: #fff;
 }
 
-canvas {
-    display: block;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #aaa;
 }
 
 .planets-list {
@@ -22,7 +40,7 @@ canvas {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     z-index: 1000;
     backdrop-filter: blur(5px);
@@ -31,17 +49,14 @@ canvas {
 
 .planet-item {
     padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    color: #fff;
-    border-radius: 5px;
     margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .planet-item:hover {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
 }
 
 .planet-info {
@@ -70,19 +85,15 @@ canvas {
     background: none;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     padding: 5px 10px;
-}
-
-.close-btn:hover {
-    color: #ff4444;
 }
 
 .tabs {
     display: flex;
     margin: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tab-btn {
@@ -92,21 +103,34 @@ canvas {
     padding: 10px 20px;
     cursor: pointer;
     opacity: 0.7;
-    transition: all 0.3s;
+    transition: opacity 0.3s;
 }
 
 .tab-btn.active {
     opacity: 1;
-    border-bottom: 2px solid #00ff00;
+    border-bottom: 2px solid #fff;
 }
 
 .tab-pane {
     display: none;
-    padding: 20px 0;
 }
 
 .tab-pane.active {
     display: block;
+}
+
+.parameter {
+    margin: 10px 0;
+}
+
+.parameter label {
+    color: #aaa;
+    margin-right: 10px;
+}
+
+#planet-facts li {
+    margin: 10px 0;
+    line-height: 1.4;
 }
 
 .controls-panel {
@@ -151,61 +175,6 @@ input[type="range"] {
     accent-color: #00ff00;
 }
 
-.header {
-    position: fixed;
-    top: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.header h1 {
-    font-size: 3em;
-    margin: 0;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    letter-spacing: 5px;
-}
-
-.subtitle {
-    font-size: 1.2em;
-    opacity: 0.7;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-.parameter {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 5px;
-}
-
-.parameter label {
-    color: #00ff00;
-    font-weight: bold;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-li:before {
-    content: "•";
-    color: #00ff00;
-    position: absolute;
-    left: 0;
-}
-
 #canvas-container {
     position: fixed;
     top: 0;
@@ -219,25 +188,22 @@ li:before {
 @media (max-width: 768px) {
     .planets-list {
         left: 10px;
-        padding: 5px;
+        padding: 10px;
     }
-
-    .planet-item {
-        padding: 8px 15px;
-        font-size: 12px;
-    }
-
+    
     .planet-info {
-        width: 280px;
+        width: 300px;
     }
-
+    
     .header h1 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
-
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
     .controls-panel {
-        flex-direction: column;
-        gap: 10px;
         padding: 10px;
     }
 }

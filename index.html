@@ -147,12 +147,6 @@
         document.querySelector('.close-btn').addEventListener('click', () => {
             document.querySelector('.planet-info').classList.remove('active');
         });
-
-        // Rotation speed control
-        const speedControl = document.getElementById('rotation-speed');
-        speedControl.addEventListener('input', (e) => {
-            window.rotationSpeed = parseFloat(e.target.value);
-        });
     </script>
 </body>
 </html>
