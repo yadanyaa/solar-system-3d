@@ -1,162 +1,152 @@
 export const planetData = {
     sun: {
-        name: 'SUN',
-        type: 'Star',
-        description: 'The Sun is the star at the center of the Solar System.',
-        parameters: {
-            mass: '1.989 × 10^30 kg',
-            diameter: '1,392,684 km',
-            temperature: '5,778 K (surface)',
-            rotation: '27 Earth days'
-        },
+        name: "Солнце",
+        type: "Звезда главной последовательности",
+        description: "Солнце - центральная звезда Солнечной системы, вокруг которой обращаются все планеты. Это источник света и тепла для всей системы.",
+        mass: "1.989 × 10^30 кг",
+        diameter: "1.392.700 км",
+        orbitPeriod: "225-250 млн лет (вокруг центра Галактики)",
+        distance: "0 а.е.",
         facts: [
-            'The Sun contains 99.86% of the Solar System\'s mass',
-            'The Sun\'s surface temperature is about 10,000 Fahrenheit',
-            'The Sun is actually white, not yellow'
+            "Температура поверхности Солнца составляет около 5500°C",
+            "Солнце составляет 99.86% массы всей Солнечной системы",
+            "Каждую секунду Солнце превращает 600 млн тонн водорода в гелий",
+            "Свет от Солнца достигает Земли за 8 минут и 20 секунд"
         ]
     },
     mercury: {
-        name: 'MERCURY',
-        type: 'Terrestrial Planet',
-        description: 'Mercury is the smallest and innermost planet in the Solar System.',
-        parameters: {
-            mass: '3.285 × 10^23 kg',
-            diameter: '4,879 km',
-            temperature: '-180°C to 430°C',
-            rotation: '59 Earth days'
-        },
+        name: "Меркурий",
+        type: "Планета земной группы",
+        description: "Меркурий - самая маленькая и ближайшая к Солнцу планета Солнечной системы. У него нет спутников, а его поверхность покрыта кратерами.",
+        mass: "3.285 × 10^23 кг",
+        diameter: "4.879 км",
+        orbitPeriod: "88 земных дней",
+        distance: "0.387 а.е.",
         facts: [
-            'Mercury has no moons',
-            'Mercury is the fastest planet',
-            'Mercury has the most eccentric orbit'
+            "Самая быстрая планета, движущаяся по орбите со скоростью 47 км/с",
+            "Несмотря на близость к Солнцу, не самая горячая планета",
+            "День на Меркурии длится 176 земных дней",
+            "Температура поверхности колеблется от -180°C до +430°C"
         ]
     },
     venus: {
-        name: 'VENUS',
-        type: 'Terrestrial Planet',
-        description: 'Venus is the second planet from the Sun and the hottest planet in our solar system.',
-        parameters: {
-            mass: '4.867 × 10^24 kg',
-            diameter: '12,104 km',
-            temperature: '462°C',
-            rotation: '243 Earth days'
-        },
+        name: "Венера",
+        type: "Планета земной группы",
+        description: "Венера - вторая планета от Солнца, часто называемая сестрой Земли из-за схожих размеров. Однако условия на ней крайне суровые.",
+        mass: "4.867 × 10^24 кг",
+        diameter: "12.104 км",
+        orbitPeriod: "225 земных дней",
+        distance: "0.723 а.е.",
         facts: [
-            'Venus rotates backwards',
-            'Venus has the longest day of any planet',
-            'Venus is the hottest planet'
+            "Самая горячая планета Солнечной системы (462°C)",
+            "Вращается в противоположном направлении большинству планет",
+            "Атмосферное давление в 90 раз больше земного",
+            "День длится дольше года (243 земных дня)"
         ]
     },
     earth: {
-        name: 'EARTH',
-        type: 'Terrestrial Planet',
-        description: 'Earth is the third planet from the Sun and the only astronomical object known to harbor life.',
-        parameters: {
-            mass: '5.972 × 10^24 kg',
-            diameter: '12,742 km',
-            temperature: '-88°C to 58°C',
-            rotation: '24 hours'
-        },
+        name: "Земля",
+        type: "Планета земной группы",
+        description: "Земля - третья планета от Солнца и единственная известная планета, на которой существует жизнь. Имеет один естественный спутник - Луну.",
+        mass: "5.972 × 10^24 кг",
+        diameter: "12.742 км",
+        orbitPeriod: "365.26 дней",
+        distance: "1 а.е.",
         facts: [
-            'Earth is the only planet not named after a god',
-            'Earth is the only planet known to have life',
-            'Earth has one natural satellite - the Moon'
+            "Единственная известная планета с жидкой водой на поверхности",
+            "Единственная планета, названная не в честь бога или богини",
+            "Самая плотная планета Солнечной системы",
+            "71% поверхности покрыто водой"
         ]
     },
     mars: {
-        name: 'MARS',
-        type: 'Terrestrial Planet',
-        description: 'Mars is the fourth planet from the Sun and is often called the Red Planet.',
-        parameters: {
-            mass: '6.39 × 10^23 kg',
-            diameter: '6,779 km',
-            temperature: '-140°C to 20°C',
-            rotation: '24 hours 37 minutes'
-        },
+        name: "Марс",
+        type: "Планета земной группы",
+        description: "Марс - четвертая планета от Солнца, известная как 'Красная планета' из-за цвета поверхности. Имеет два маленьких спутника.",
+        mass: "6.39 × 10^23 кг",
+        diameter: "6.779 км",
+        orbitPeriod: "687 земных дней",
+        distance: "1.524 а.е.",
         facts: [
-            'Mars has the largest volcano in the solar system',
-            'Mars has two moons',
-            'Mars has the largest dust storms in the solar system'
+            "Имеет самую высокую гору в Солнечной системе - Олимп",
+            "На Марсе находится самый большой каньон",
+            "Имеет сезоны, как Земля",
+            "В прошлом на поверхности была жидкая вода"
         ]
     },
     jupiter: {
-        name: 'JUPITER',
-        type: 'Gas Giant',
-        description: 'Jupiter is the fifth planet from the Sun and the largest planet in our Solar System.',
-        parameters: {
-            mass: '1.898 × 10^27 kg',
-            diameter: '139,820 km',
-            temperature: '-110°C',
-            rotation: '10 hours'
-        },
+        name: "Юпитер",
+        type: "Газовый гигант",
+        description: "Юпитер - крупнейшая планета Солнечной системы, газовый гигант с мощной атмосферой и множеством спутников.",
+        mass: "1.898 × 10^27 кг",
+        diameter: "139.820 км",
+        orbitPeriod: "11.9 земных лет",
+        distance: "5.203 а.е.",
         facts: [
-            'Jupiter has the shortest day of any planet',
-            'Jupiter has the Great Red Spot',
-            'Jupiter has at least 79 moons'
+            "Масса в 2.5 раза больше всех остальных планет вместе взятых",
+            "Имеет Большое Красное Пятно - гигантский шторм",
+            "Обладает самым сильным магнитным полем",
+            "Имеет 79 известных спутников"
         ]
     },
     saturn: {
-        name: 'SATURN',
-        type: 'Gas Giant',
-        description: 'Saturn is the sixth planet from the Sun and is famous for its rings.',
-        parameters: {
-            mass: '5.683 × 10^26 kg',
-            diameter: '116,460 km',
-            temperature: '-140°C',
-            rotation: '10.7 hours'
-        },
+        name: "Сатурн",
+        type: "Газовый гигант",
+        description: "Сатурн - шестая планета от Солнца, известная своей впечатляющей системой колец. Второй по размеру газовый гигант.",
+        mass: "5.683 × 10^26 кг",
+        diameter: "116.460 км",
+        orbitPeriod: "29.5 земных лет",
+        distance: "9.537 а.е.",
         facts: [
-            'Saturn has the most extensive rings in the solar system',
-            'Saturn has 82 confirmed moons',
-            'Saturn is the least dense planet'
+            "Единственная планета, которая может плавать в воде",
+            "Кольца состоят в основном из льда и камней",
+            "Имеет 82 подтвержденных спутника",
+            "День на Сатурне длится всего 10.7 земных часов"
         ]
     },
     uranus: {
-        name: 'URANUS',
-        type: 'Ice Giant',
-        description: 'Uranus is the seventh planet from the Sun and rotates on its side.',
-        parameters: {
-            mass: '8.681 × 10^25 kg',
-            diameter: '50,724 km',
-            temperature: '-195°C',
-            rotation: '17 hours 14 minutes'
-        },
+        name: "Уран",
+        type: "Ледяной гигант",
+        description: "Уран - седьмая планета от Солнца, первая планета, открытая с помощью телескопа. Имеет необычный наклон оси вращения.",
+        mass: "8.681 × 10^25 кг",
+        diameter: "50.724 км",
+        orbitPeriod: "84 земных года",
+        distance: "19.191 а.е.",
         facts: [
-            'Uranus rotates on its side',
-            'Uranus has 27 known moons',
-            'Uranus is the coldest planet in the solar system'
+            "Вращается 'лёжа на боку' - ось наклонена на 98 градусов",
+            "Самая холодная планетарная атмосфера (-224°C)",
+            "Имеет 27 известных спутников",
+            "Кольца расположены перпендикулярно плоскости орбиты"
         ]
     },
     neptune: {
-        name: 'NEPTUNE',
-        type: 'Ice Giant',
-        description: 'Neptune is the eighth planet from the Sun and the windiest planet in our Solar System.',
-        parameters: {
-            mass: '1.024 × 10^26 kg',
-            diameter: '49,244 km',
-            temperature: '-200°C',
-            rotation: '16 hours'
-        },
+        name: "Нептун",
+        type: "Ледяной гигант",
+        description: "Нептун - восьмая и самая дальняя планета Солнечной системы. Был открыт благодаря математическим расчётам.",
+        mass: "1.024 × 10^26 кг",
+        diameter: "49.244 км",
+        orbitPeriod: "165 земных лет",
+        distance: "30.069 а.е.",
         facts: [
-            'Neptune has the strongest winds in the solar system',
-            'Neptune has 14 known moons',
-            'Neptune has only been visited by one spacecraft'
+            "Самые сильные ветры в Солнечной системе (2.100 км/ч)",
+            "Имеет Большое Тёмное Пятно, похожее на пятно Юпитера",
+            "Открыт благодаря математическим вычислениям",
+            "Имеет 14 известных спутников"
         ]
     },
     pluto: {
-        name: 'PLUTO',
-        type: 'Dwarf Planet',
-        description: 'Pluto is a dwarf planet in the Kuiper belt.',
-        parameters: {
-            mass: '1.303 × 10^22 kg',
-            diameter: '2,377 km',
-            temperature: '-230°C',
-            rotation: '6.4 Earth days'
-        },
+        name: "Плутон",
+        type: "Карликовая планета",
+        description: "Плутон - крупнейшая известная карликовая планета в Солнечной системе. До 2006 года считался девятой планетой.",
+        mass: "1.303 × 10^22 кг",
+        diameter: "2.377 км",
+        orbitPeriod: "248 земных лет",
+        distance: "39.482 а.е.",
         facts: [
-            'Pluto was once considered the ninth planet',
-            'Pluto has 5 known moons',
-            'Pluto is smaller than Earth\'s moon'
+            "Меньше чем Луна по размеру",
+            "Имеет 5 известных спутников",
+            "Состоит в основном из камня и льда",
+            "Был понижен до статуса карликовой планеты в 2006 году"
         ]
     }
 };

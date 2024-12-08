@@ -1,44 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Solar System</title>
+    <title>3D Солнечная Система</title>
     <link rel="stylesheet" href="styles.css">
+    <script async src="https://unpkg.com/es-module-shims@1.7.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.156.1/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
+    <div class="header">
+        <h1>Солнечная Система</h1>
+        <div class="subtitle">Интерактивная 3D визуализация</div>
+    </div>
+
     <div id="canvas-container"></div>
-    
-    <div id="controls-panel">
-        <button id="reset-camera">Reset Camera</button>
-        <div id="planet-list">
-            <h3>Planets</h3>
-            <button data-planet="sun">Sun</button>
-            <button data-planet="mercury">Mercury</button>
-            <button data-planet="venus">Venus</button>
-            <button data-planet="earth">Earth</button>
-            <button data-planet="mars">Mars</button>
-            <button data-planet="jupiter">Jupiter</button>
-            <button data-planet="saturn">Saturn</button>
-            <button data-planet="uranus">Uranus</button>
-            <button data-planet="neptune">Neptune</button>
-            <button data-planet="pluto">Pluto</button>
+
+    <div class="planets-list">
+        <div class="planet-item" data-planet="sun">Солнце</div>
+        <div class="planet-item" data-planet="mercury">Меркурий</div>
+        <div class="planet-item" data-planet="venus">Венера</div>
+        <div class="planet-item" data-planet="earth">Земля</div>
+        <div class="planet-item" data-planet="mars">Марс</div>
+        <div class="planet-item" data-planet="jupiter">Юпитер</div>
+        <div class="planet-item" data-planet="saturn">Сатурн</div>
+        <div class="planet-item" data-planet="uranus">Уран</div>
+        <div class="planet-item" data-planet="neptune">Нептун</div>
+        <div class="planet-item" data-planet="pluto">Плутон</div>
+    </div>
+
+    <div class="planet-info">
+        <button class="close-btn">×</button>
+        <h2 id="planet-name"></h2>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="info">Информация</button>
+            <button class="tab-btn" data-tab="params">Параметры</button>
+            <button class="tab-btn" data-tab="facts">Интересные факты</button>
+        </div>
+
+        <div class="tab-pane active" id="info">
+            <p id="planet-description"></p>
+        </div>
+
+        <div class="tab-pane" id="params">
+            <div class="parameter">
+                <label>Тип:</label>
+                <span id="planet-type"></span>
+            </div>
+            <div class="parameter">
+                <label>Масса:</label>
+                <span id="planet-mass"></span>
+            </div>
+            <div class="parameter">
+                <label>Диаметр:</label>
+                <span id="planet-diameter"></span>
+            </div>
+            <div class="parameter">
+                <label>Период обращения:</label>
+                <span id="planet-orbit-period"></span>
+            </div>
+            <div class="parameter">
+                <label>Расстояние от Солнца:</label>
+                <span id="planet-distance"></span>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="facts">
+            <ul id="planet-facts"></ul>
         </div>
     </div>
 
-    <div id="planet-info"></div>
+    <div class="controls-panel">
+        <button id="reset-camera">Сбросить камеру</button>
+        <div class="speed-control">
+            <span>Скорость вращения:</span>
+            <input type="range" id="rotation-speed" min="0" max="2" step="0.1" value="1">
+        </div>
+    </div>
 
-    <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.156.1/examples/"
-        }
-    }
-    </script>
     <script type="module">
         import { init, resetCamera, focusOnPlanet } from './main.js';
+        import { planetData } from './planetData.js';
 
         // Initialize the scene
         init();
@@ -47,10 +97,61 @@
         document.getElementById('reset-camera').addEventListener('click', resetCamera);
 
         // Add click handlers for planet buttons
-        document.querySelectorAll('#planet-list button').forEach(button => {
-            button.addEventListener('click', () => {
-                focusOnPlanet(button.dataset.planet);
+        document.querySelectorAll('.planet-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const planetName = item.dataset.planet;
+                focusOnPlanet(planetName);
+                showPlanetInfo(planetName);
             });
+        });
+
+        // Planet info panel functionality
+        function showPlanetInfo(planetName) {
+            const planet = planetData[planetName];
+            const infoPanel = document.querySelector('.planet-info');
+            
+            // Set planet name
+            infoPanel.querySelector('#planet-name').textContent = planet.name;
+            
+            // Update content for each tab
+            document.getElementById('planet-description').textContent = planet.description;
+            
+            document.getElementById('planet-type').textContent = planet.type;
+            document.getElementById('planet-mass').textContent = planet.mass;
+            document.getElementById('planet-diameter').textContent = planet.diameter;
+            document.getElementById('planet-orbit-period').textContent = planet.orbitPeriod;
+            document.getElementById('planet-distance').textContent = planet.distance;
+            
+            const factsHtml = planet.facts.map(fact => `<li>${fact}</li>`).join('');
+            document.getElementById('planet-facts').innerHTML = factsHtml;
+            
+            // Show the panel
+            infoPanel.classList.add('active');
+        }
+
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding pane
+                button.classList.add('active');
+                const tabId = button.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Close button functionality
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.querySelector('.planet-info').classList.remove('active');
+        });
+
+        // Rotation speed control
+        const speedControl = document.getElementById('rotation-speed');
+        speedControl.addEventListener('input', (e) => {
+            window.rotationSpeed = parseFloat(e.target.value);
         });
     </script>
 </body>
